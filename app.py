@@ -1,6 +1,6 @@
 import gradio as gr
 from components.chat_ui import create_chat_interface
-from components.persona_ui import create_persona_interface
+from components.persona import create_persona_interface
 from components.settings_ui import create_settings_interface
 
 def create_main_interface():
@@ -31,6 +31,8 @@ def create_main_interface():
             # Memory Tab
             with gr.TabItem("🧠 Memory", id="memory"):
                 create_memory_interface()
+    
+    return demo
 
 def create_memory_interface():
     """Create memory management interface"""

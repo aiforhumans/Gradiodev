@@ -8,9 +8,12 @@ def create_chat_interface():
             # Main chat interface
             chatbot = gr.Chatbot(
                 value=[
-                    ("Hello! How are you today?", "Hi there! I'm doing great, thanks for asking. How can I help you today?"),
-                    ("Tell me about yourself", "I'm an AI companion designed to have engaging conversations. I have a customizable personality that you can adjust in the Persona tab. What would you like to talk about?")
+                    {"role": "user", "content": "Hello! How are you today?"},
+                    {"role": "assistant", "content": "Hi there! I'm doing great, thanks for asking. How can I help you today?"},
+                    {"role": "user", "content": "Tell me about yourself"},
+                    {"role": "assistant", "content": "I'm an AI companion designed to have engaging conversations. I have a customizable personality that you can adjust in the Persona tab. What would you like to talk about?"}
                 ],
+                type="messages",
                 height=500,
                 show_label=False,
                 container=True,
